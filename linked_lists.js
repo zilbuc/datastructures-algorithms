@@ -90,6 +90,30 @@ class LinkedList {
     }
     return currentNode;
   }
+
+  reverse() {
+    //check params? if 1 node?
+    console.log('initial list', this.printList());
+    const array = this.printList();
+    let currentBucket = this.head;
+    for (let i = array.length - 1; i >= 0; i--) {
+      currentBucket.value = array[i];
+      currentBucket = currentBucket.next;
+    }
+    //alternative way without array, but with temp node
+    /*let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+    while (second) {
+      let temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+    this.head.next = null;
+    this.head = first;
+    return this.printList();*/
+  }
 }
 
 const myLinkedList = new LinkedList(10);
