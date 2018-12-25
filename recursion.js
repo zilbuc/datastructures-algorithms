@@ -21,7 +21,7 @@ findFactorialRecursive(5);
 //findFactorialIterative(5);
 
 /***********************
- ******  Factorial
+ ******  Fibonacci
  ************************/
 
 function fibonacciIterative(n) {
@@ -44,3 +44,35 @@ function fibonacciRecursive(n) {
 }
 
 //fibonacciRecursive(7);
+
+/***********************
+ ******  Reverse a string
+ ************************/
+
+
+function reverseStringRec(str) {
+  if (str === '') {
+    return str;
+  }
+  return reverseStringRec(str.substr(1)) + str.charAt(0);
+}
+
+reverseStringRec('yoyo mastery')
+//should return: 'retsam oyoy'
+
+function reverseStringArr(str) {
+  let array = str.split('');
+  let reversedArray = [];
+
+  function addToArray(array) {
+    if (array.length > 0) {
+      reversedArray.push(array.pop());
+      addToArray(array);
+    }
+  }
+  addToArray(array);
+
+  return reversedArray.join('');
+}
+
+reverseStringArr('hello');
