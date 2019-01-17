@@ -23,3 +23,5 @@ const fish2 = new Nemo();
 
 console.log('fish1', fish1.eatsFish);
 console.log('fish2', fish2.eatsFish);
+
+/* REDIS, AWS, Docker, JWT, CI/CD, SPA vs server side rendering.... */
