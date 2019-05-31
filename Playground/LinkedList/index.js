@@ -98,19 +98,35 @@ const customLinkedList = () => {
     },
     isEmpty() {
       return this.length === 0;
+    },
+    print() {
+      const values = [];
+      let node = this.head;
+      while (node) {
+        values.push(node.value);
+        node = node.next;
+      }
+
+      return console.log(values.join(' => '));
     }
   }
 }
 
 const newList = customLinkedList();
+
 newList.push('first');
 newList.push('second');
 newList.push('third');
-newList.delete(0);
+const values = ['a', 'b', 'c', 'd', 'e'];
+const nodes = values.map(val => newList.push(val));
+
+newList.delete(2);
+console.log(newList.pop().value);
+newList.print();
 // newList.pop();
-newList.pop();
-console.log(newList.get(0));
-console.log(newList.isEmpty());
-console.log(newList.length);
-console.log(newList.head);
-console.log(newList.tail);
+// newList.pop();
+// console.log(newList.get(0));
+// console.log(newList.isEmpty());
+// console.log(newList.length);
+// console.log(newList.head);
+// console.log(newList.tail);
